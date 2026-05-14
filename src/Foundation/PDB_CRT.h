@@ -4,7 +4,7 @@
 #pragma once
 
 
-#if _MSC_VER
+#if defined(_MSC_VER)
 // avoid pulling in different headers just for a few declarations
 extern "C" int __cdecl printf(char const* const _Format, ...);
 

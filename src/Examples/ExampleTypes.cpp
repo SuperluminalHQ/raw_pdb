@@ -1400,7 +1400,7 @@ void ExampleTPISize(const PDB::TPIStream& tpiStream, const char* outPath)
 			default: break;
 		}
 
-		fprintf(f, "%hu;", 2 + record->header.size);
+		fprintf(f, "%d;", 2 + record->header.size);
 		if (kindName)
 			fprintf(f, "%s;", kindName);
 		else

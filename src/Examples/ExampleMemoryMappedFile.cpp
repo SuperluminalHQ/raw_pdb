@@ -66,7 +66,7 @@ MemoryMappedFile::Handle MemoryMappedFile::Open(const char* path)
 		return Handle { INVALID_HANDLE_VALUE, nullptr, 0 };
 	}
 
-	void* baseAddress = mmap(nullptr, fileSb.st_size, PROT_READ, MAP_PRIVATE, file, 0);
+	void* baseAddress = mmap(nullptr, static_cast<size_t>(fileSb.st_size), PROT_READ, MAP_PRIVATE, file, 0);
 
 	if (baseAddress == MAP_FAILED)
 	{
