@@ -68,6 +68,8 @@ add_library(raw_pdb
     ${SOURCES}
 )
 
+set_target_properties(raw_pdb PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 target_include_directories(raw_pdb
   PUBLIC
     .

@@ -21,6 +21,11 @@
 #	error("Unknown compiler.");
 #endif
 
+// MSVC-specific keywords that need to be defined away on other compilers
+#if !PDB_COMPILER_MSVC
+#	define __cdecl
+#endif
+
 // check whether C++17 is available
 #if __cplusplus >= 201703L
 #	define PDB_CPP_17						1

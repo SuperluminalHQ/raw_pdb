@@ -25,7 +25,7 @@ namespace PDB
 	{
 		// Returns whether the given unsigned value is a power of two.
 		template <typename T>
-		PDB_NO_DISCARD inline constexpr bool IsPowerOfTwo(T value) PDB_NO_EXCEPT
+		PDB_NO_DISCARD inline bool IsPowerOfTwo(T value) PDB_NO_EXCEPT
 		{
 			PDB_ASSERT(value != 0u, "Invalid value.");
 
@@ -35,7 +35,7 @@ namespace PDB
 
 		// Rounds the given unsigned value up to the next multiple.
 		template <typename T>
-		PDB_NO_DISCARD inline constexpr T RoundUpToMultiple(T numToRound, T multipleOf) PDB_NO_EXCEPT
+		PDB_NO_DISCARD inline T RoundUpToMultiple(T numToRound, T multipleOf) PDB_NO_EXCEPT
 		{
 			PDB_ASSERT(IsPowerOfTwo(multipleOf), "Multiple must be a power-of-two.");
 
