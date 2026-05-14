@@ -70,6 +70,11 @@ add_library(raw_pdb
 
 set_target_properties(raw_pdb PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
+# disable because of extensive use of zero-length arrays
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    target_compile_options(raw_pdb PRIVATE -Wno-pedantic)
+endif()
+
 target_include_directories(raw_pdb
   PUBLIC
     .
