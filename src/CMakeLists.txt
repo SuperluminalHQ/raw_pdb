@@ -3,7 +3,6 @@ set(SOURCES
 	Foundation/PDB_Assert.h
 	Foundation/PDB_BitOperators.h
 	Foundation/PDB_BitUtil.h
-	Foundation/PDB_CRT.h
 	Foundation/PDB_Forward.h
 	Foundation/PDB_Log.h
 	Foundation/PDB_Macros.h

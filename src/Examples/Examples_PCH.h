@@ -45,6 +45,8 @@
 #	include <string>
 #	include <algorithm>
 #	include <cstdarg>
+#	include <cstdio>
+#	include <cstring>
 
 #if PDB_COMPILER_MSVC
 #	pragma warning(pop)

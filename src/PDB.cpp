@@ -7,7 +7,6 @@
 #include "PDB_Util.h"
 #include "PDB_RawFile.h"
 #include "Foundation/PDB_PointerUtil.h"
-#include "Foundation/PDB_CRT.h"
 
 
 // ------------------------------------------------------------------------------------------------

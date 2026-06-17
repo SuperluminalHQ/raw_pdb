@@ -4,7 +4,6 @@
 #include "PDB_PCH.h"
 #include "PDB_InfoStream.h"
 #include "PDB_RawFile.h"
-#include "Foundation/PDB_CRT.h"
 
 namespace
 {

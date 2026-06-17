@@ -4,7 +4,7 @@
 #pragma once
 
 #include "PDB_Macros.h"
-#include "PDB_CRT.h"
+#include <cstdio>
 
 
 PDB_PUSH_WARNING_CLANG

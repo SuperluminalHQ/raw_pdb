@@ -182,8 +182,5 @@
     <ClInclude Include="..\src\Foundation\PDB_TypeTraits.h">
       <Filter>Source Files\Foundation</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Foundation\PDB_CRT.h">
-      <Filter>Source Files\Foundation</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
