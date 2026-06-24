@@ -6,7 +6,6 @@
 #include "Foundation/PDB_PointerUtil.h"
 #include "Foundation/PDB_BitUtil.h"
 #include "Foundation/PDB_Assert.h"
-#include "Foundation/PDB_CRT.h"
 
 
 // ------------------------------------------------------------------------------------------------

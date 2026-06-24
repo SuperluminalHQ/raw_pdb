@@ -3,7 +3,6 @@ set(SOURCES
 	Foundation/PDB_Assert.h
 	Foundation/PDB_BitOperators.h
 	Foundation/PDB_BitUtil.h
-	Foundation/PDB_CRT.h
 	Foundation/PDB_Forward.h
 	Foundation/PDB_Log.h
 	Foundation/PDB_Macros.h
@@ -67,6 +66,8 @@ source_group(src FILES
 add_library(raw_pdb
     ${SOURCES}
 )
+
+set_target_properties(raw_pdb PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 target_include_directories(raw_pdb
   PUBLIC

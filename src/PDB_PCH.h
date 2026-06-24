@@ -18,3 +18,6 @@
 #include "Foundation/PDB_BitUtil.h"
 #include "Foundation/PDB_BitOperators.h"
 #include "Foundation/PDB_PointerUtil.h"
+
+#include <cstdio>
+#include <cstring>

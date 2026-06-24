@@ -903,7 +903,7 @@ std::string GetTypeName(const TypeTable& typeTable, uint32_t typeIndex)
 		{
 			// d3d12.pdb\1DEAE23C86E6462A86018FB180EB8E4A1, S_CALLSITE for `dynamic initializer for 'g_Telemetry'': typeIndex == 0x80900001
 			char typeIndexBuf[0x0C];
-			sprintf_s(typeIndexBuf, sizeof(typeIndexBuf), "%08X", typeIndex);
+			snprintf(typeIndexBuf, sizeof(typeIndexBuf), "%08X", typeIndex);
 			return std::string("<BAD_TYPE_INDEX:0x") + typeIndexBuf + ">";
 		}
 		PDB_ASSERT(referencedType != nullptr, "Neither typeName nor referencedType are set.");
@@ -1400,7 +1400,7 @@ void ExampleTPISize(const PDB::TPIStream& tpiStream, const char* outPath)
 			default: break;
 		}
 
-		fprintf(f, "%hu;", 2 + record->header.size);
+		fprintf(f, "%d;", 2 + record->header.size);
 		if (kindName)
 			fprintf(f, "%s;", kindName);
 		else

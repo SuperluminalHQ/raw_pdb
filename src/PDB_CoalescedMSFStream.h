@@ -11,7 +11,7 @@
 // https://llvm.org/docs/PDB/MsfFile.html
 namespace PDB
 {
-	class PDB_NO_DISCARD DirectMSFStream;
+	class DirectMSFStream;
 
 
 	// provides access to a coalesced version of an MSF stream.

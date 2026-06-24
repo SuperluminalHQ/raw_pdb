@@ -72,6 +72,10 @@
 #	define PDB_PUSH_WARNING_CLANG
 #	define PDB_DISABLE_WARNING_CLANG(_diagnostic)
 #	define PDB_POP_WARNING_CLANG
+
+#	define PDB_PUSH_WARNING_GCC
+#	define PDB_DISABLE_WARNING_GCC(_diagnostic)
+#	define PDB_POP_WARNING_GCC
 #elif PDB_COMPILER_CLANG
 #	define PDB_PRAGMA(_x)									_Pragma(#_x)
 
@@ -83,6 +87,10 @@
 #	define PDB_PUSH_WARNING_CLANG							PDB_PRAGMA(clang diagnostic push)
 #	define PDB_DISABLE_WARNING_CLANG(_diagnostic)			PDB_PRAGMA(clang diagnostic ignored _diagnostic)
 #	define PDB_POP_WARNING_CLANG							PDB_PRAGMA(clang diagnostic pop)
+
+#	define PDB_PUSH_WARNING_GCC
+#	define PDB_DISABLE_WARNING_GCC(_diagnostic)
+#	define PDB_POP_WARNING_GCC
 #elif PDB_COMPILER_GCC
 #	define PDB_PRAGMA(_x)									_Pragma(#_x)
 
@@ -94,6 +102,10 @@
 #	define PDB_PUSH_WARNING_CLANG
 #	define PDB_DISABLE_WARNING_CLANG(_diagnostic)
 #	define PDB_POP_WARNING_CLANG
+
+#	define PDB_PUSH_WARNING_GCC							PDB_PRAGMA(GCC diagnostic push)
+#	define PDB_DISABLE_WARNING_GCC(_diagnostic)			PDB_PRAGMA(GCC diagnostic ignored _diagnostic)
+#	define PDB_POP_WARNING_GCC							PDB_PRAGMA(GCC diagnostic pop)
 #endif
 
 
@@ -108,11 +120,14 @@
 #define PDB_FLEXIBLE_ARRAY_MEMBER(_type, _name)				\
 	PDB_PUSH_WARNING_MSVC									\
 	PDB_PUSH_WARNING_CLANG									\
+	PDB_PUSH_WARNING_GCC									\
 	PDB_DISABLE_WARNING_MSVC(4200)							\
 	PDB_DISABLE_WARNING_CLANG("-Wzero-length-array")		\
+	PDB_DISABLE_WARNING_GCC("-Wpedantic")					\
 	_type _name[0];											\
 	PDB_POP_WARNING_MSVC									\
 	PDB_POP_WARNING_CLANG									\
+	PDB_POP_WARNING_GCC									\
 	PDB_REQUIRE_SEMICOLON
 
 // Casts any value to the value of the underlying type.
